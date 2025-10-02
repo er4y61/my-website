@@ -1,0 +1,300 @@
+@charset "utf-8"; 
+
+
+/* === GENEL GÖRÜNÜM VE TEMA AYARLARI === */
+body {
+  margin: 0; /* Sayfa kenar boşluklarını sıfırlar */
+  padding: 0; /* Sayfa iç boşluklarını sıfırlar */
+  font-family: sans-serif; /* Yazı tipi sans-serif olarak ayarlanır */
+  background: black; /* Sayfa arka planı siyah yapılır */
+  color: white; /* Varsayılan yazı rengi beyaz yapılır */
+}
+
+/* === HEADER / BAŞLIK ALANI === */
+header {
+  position: relative; /* Arka plan videosu için konumlandırma */
+  width: 100%; /* Tam genişlik kaplar */
+  height: 300px; /* Sabit yükseklik belirlenir */
+  overflow: hidden; /* Taşmalar gizlenir */
+  display: flex; /* İçerikler yatayda sıralanır */
+  align-items: center; /* Dikeyde ortalanır */
+  justify-content: center; /* Yatayda ortalanır */
+  padding: 20px; /* İç boşluk bırakılır */
+  flex-wrap: wrap; /* Küçük ekranlarda alt alta dizilir */
+  text-align: center; /* İçerikler ortalanır */
+}
+
+header img {
+  width: 250px; /* Görsel genişliği ayarlanır */
+  height: 250px; /* Görsel yüksekliği ayarlanır */
+  max-height: 250px; /* Maksimum yüksekliği belirlenir */
+  margin: 10px 20px; /* Dış boşluk verilir */
+  border-radius: 50%; /* Yuvarlak görünüm sağlanır */
+  flex-shrink: 0; /* Küçülmesi engellenir */
+}
+
+.background-video {
+  position: absolute; /* Sayfaya göre konumlandırılır */
+  top: 0; /* Yukarıdan hizalanır */
+  left: 0; /* Soldan hizalanır */
+  width: 100%; /* Genişlik tamamlanır */
+  height: 100%; /* Yükseklik tamamlanır */
+  object-fit: cover; /* Oranı bozulmadan tam ekran doldurur */
+  z-index: -1; /* İçeriğin arkasına yerleştirilir */
+}
+
+.text-container {
+  flex: 1; /* Boş alanı kaplar */
+  min-width: 250px; /* Minimum genişlik belirlenir */
+  padding: 10px; /* İç boşluk bırakılır */
+}
+
+.header-text {
+  font-family: 'Courier New', monospace; /* Daktilo yazı tipi */
+  font-size: 32px; /* Yazı boyutu */
+  font-weight: bold; /* Kalın yazı */
+  color: white; /* Beyaz renk */
+  overflow: hidden; /* Taşan içerik gizlenir */
+  border-right: 2px solid white; /* İmleç efekti */
+  display: inline-block; /* Genişlik animasyonu için gerekli */
+  white-space: nowrap; /* Tek satırda tutar */
+  animation: typing 3s steps(29, end) forwards, blink 0.75s step-end infinite; /* Yazma ve imleç animasyonu */
+}
+
+@keyframes typing {
+  from { width: 0; } /* Başlangıçta görünmez */
+  to { width: 49ch; } /* 49 karakter genişler */
+}
+
+@keyframes blink {
+  from, to { border-color: transparent; } /* Başlangıç ve bitişte görünmez */
+  50% { border-color: white; } /* Ortada görünür */
+}
+
+/* === NAVİGASYON MENÜSÜ === */
+nav {
+  width: 100%; /* Genişlik tamamlanır */
+  height: 50px; /* Sabit yükseklik */
+  background: rgba(0, 0, 0, 0.8); /* Yarı saydam arka plan */
+  border-top: 1px solid rgba(255,255,255,0.2); /* Üst çizgi */
+  border-bottom: 1px solid rgba(255,255,255,0.2); /* Alt çizgi */
+  position: sticky; /* Sayfa kayınca sabit kalır */
+  top: 0; /* Sayfanın en üstüne yapışır */
+  z-index: 1000; /* Diğer ögelerin üstünde olur */
+}
+
+nav ul {
+  display: flex; /* Yatay sıralama */
+  margin: 0; /* Dış boşluk sıfırlanır */
+  padding: 0 10px; /* İç boşluk verilir */
+  list-style: none; /* Madde işaretleri kaldırılır */
+  justify-content: flex-end; /* Sağa hizalanır */
+  flex-wrap: wrap; /* Taşma durumunda satır atlar */
+}
+
+nav ul li a {
+  display: block; /* Tıklanabilir alan sağlar */
+  color: white; /* Yazı rengi beyaz */
+  padding: 0 20px; /* Yatay iç boşluk */
+  text-decoration: none; /* Alt çizgi kaldırılır */
+  text-transform: uppercase; /* Büyük harfe çevirir */
+  font-weight: bold; /* Kalın yazı */
+  line-height: 50px; /* Dikey ortalama sağlar */
+}
+
+nav ul li a:hover {
+  background: red; /* Üzerine gelince kırmızı olur */
+}
+
+nav ul li a:active {
+  background: blue; /* Tıklanınca mavi olur */
+}
+
+/* === ANA BÖLÜM / BUTON VE KAR EFEKTİ === */
+section {
+  background: url("images/futbol.jpg"); /* Arka plan resmi */
+  background-size: cover; /* Tüm alanı kaplar */
+  background-position: center; /* Ortalanır */
+  width: 100%; /* Genişlik tamamlanır */
+  min-height: 100vh; /* Ekran boyu kadar yüksek */
+  position: relative; /* İçerik için referans */
+  overflow: hidden; /* Taşmalar gizlenir */
+}
+
+.snow1, .snow2, .snow3 {
+  background: url("images/snow1.png") repeat; /* Kar tanesi görseli */
+  width: 100%; /* Tam genişlik */
+  height: 100vh; /* Tam yükseklik */
+  position: absolute; /* Sayfa üstünde */
+  top: 0; /* Yukarı hizalanır */
+  left: 0; /* Sola hizalanır */
+  background-size: 300px; /* Görsel boyutu */
+  filter: blur(2px); /* Bulanıklık efekti */
+  z-index: 0; /* Arka planda kalır */
+  pointer-events: none; /* Etkileşimi engellemez */
+}
+
+.snow1 { animation: kar1 10s infinite linear; } /* Kar animasyonu katman 1 */
+.snow2 { animation: kar2 12s infinite linear; } /* Katman 2 */
+.snow3 {
+  background-size: 800px; /* Daha büyük görsel */
+  animation: kar3 15s infinite linear; /* Daha yavaş animasyon */
+}
+
+@keyframes kar1 {
+  0% { background-position: 0 0; }
+  100% { background-position: 200px 100vh; }
+}
+
+@keyframes kar2 {
+  0% { background-position: 0 0; }
+  100% { background-position: 100px 100vh; }
+}
+
+@keyframes kar3 {
+  0% { background-position: 0 100px; }
+  100% { background-position: 300px 100vh; }
+}
+
+/* === AÇILIR KITA MENÜLERİ === */
+.button-menu {
+  text-align: center;/* Ortalanır */
+  padding-top: 60px; /* Üst boşluk */
+  padding-bottom: 40px; /* Alt boşluk */
+  position: relative; /* Konum referansı */
+  z-index: 1; /* Kar efektinin üstünde olur */
+}
+
+.button-menu h2 {
+  font-size: 28px; /* Başlık boyutu */
+  margin-bottom: 30px; /* Başlık altı boşluk */
+  font-weight: bold; /* Kalın yazı */
+}
+
+.button-section {
+  display: flex; /* Yatayda yerleştirir */
+  justify-content: center; /* Ortalar */
+  flex-wrap: wrap; /* Taşarsa satır atar */
+  gap: 30px; /* Kutu arası boşluk */
+  padding: 40px; /* İç boşluk */
+}
+
+/* === KITA MENÜLERİ OK SİMGESİ KONTROLÜ === */
+.arrow summary::marker {
+  display: none; /* Varsayılan üçgen simgesi (marker) gizlenir */
+}
+
+.arrow summary::after {
+  content: " ▼"; /* Menü kapalıyken aşağı ok simgesi gösterilir */
+}
+
+.arrow [open] > summary::after {
+  content: " ▲"; /* Menü açıkken yukarı ok simgesi gösterilir */
+}
+
+.arrow {
+  background-color: #222; /* Koyu gri arka plan */
+  color: white; /* Yazı rengi beyaz */
+  border-radius: 10px; /* Köşeleri yuvarlak */
+  padding: 15px; /* İç boşluk */
+  width: 180px; /* Kutu genişliği */
+  box-shadow: 0 0 10px rgba(255,255,255,0.2); /* Hafif gölge efekti */
+  text-align: center; /* Metin ortalanır */
+}
+
+.arrow summary {
+  font-size: 18px; /* Başlık yazı boyutu */
+  font-weight: bold; /* Kalın yazı */
+  cursor: pointer; /* İmleç el şeklinde olur */
+  list-style: none; /* Liste simgeleri kaldırılır */
+}
+
+.country-list {
+  margin-top: 10px; /* Yukarıdan boşluk */
+  display: flex; /* Dikey dizilim */
+  flex-direction: column; /* Dikey sıralama */
+  gap: 8px; /* Ülke butonları arası boşluk */
+}
+
+.country-list button {
+  padding: 8px; /* İç boşluk */
+  background-color: #444; /* Orta koyu gri */
+  color: white; /* Beyaz yazı */
+  border: none; /* Kenarlık kaldırılır */
+  border-radius: 5px; /* Buton köşeleri yumuşatılır */
+  cursor: pointer; /* İmleç el olur */
+}
+
+.country-list button:hover {
+  background-color: #666; /* Üzerine gelince renk açılır */
+}
+
+/* === ALT BİLGİ / FOOTER === */
+.sfooter {
+  background-color: #111; /* Koyu gri arka plan */
+  color: white; /* Beyaz yazı */
+  text-align: center; /* Ortalanır */
+  padding: 30px 20px; /* İç boşluk */
+  border-top: 1px solid rgba(255,255,255,0.2); /* Üst kenar çizgisi */
+  font-size: 14px; /* Küçük yazı boyutu */
+  margin-top: 65px; /* Üst boşluk */
+}
+
+.sfooter p {
+  margin: 5px 0; /* Paragraflar arası boşluk */
+}
+
+/* === DUYARLI TASARIM / RESPONSIVE === */
+@media (max-width: 768px) {
+  header {
+    flex-direction: column; /* Dikey hizalama */
+    height: auto; /* Otomatik yükseklik */
+    text-align: center; /* Ortalanır */
+  }
+
+  header img {
+    width: 180px; /* Daha küçük logo */
+    height: 180px; /* Daha küçük logo */
+    margin: 10px auto; /* Ortalanır */
+  }
+
+  .header-text {
+    font-size: 20px; /* Küçük ekran için yazı boyutu */
+  }
+}
+.kayansatir {
+  position: fixed; /* Sayfanın en altına sabitlenir */
+  bottom: 0; /* Alt kenara yapışık olur */
+  left: 0; /* Sol kenardan başlar */
+  width: 100%; /* Tam genişlik kaplar */
+  height: 40px; /* Yüksekliği 40 piksel */
+  background-color: black; /* Arka plan siyah */
+  color: white; /* Yazı rengi beyaz */
+  display: flex; /* İçeriği yatayda hizalamak için flex kullanılır */
+  align-items: center; /* Dikey ortalama */
+  z-index: 9999; /* En üstte görünmesini sağlar */
+  overflow: hidden; /* Taşan içerikler görünmez */
+  padding-left: 10px; /* Soldan 10px boşluk bırakır */
+  font-size: 16px; /* Yazı boyutu */
+  font-weight: bold; /* Kalın yazı tipi */
+}
+
+.kayansatir .kayansatir1 {
+  white-space: nowrap; /* Metni tek satırda tutar, satır atlamaz */
+  animation: kaydirSabit 68s linear infinite; /* 68 saniyelik sürekli kayan animasyon */
+  padding-left: 100%; /* Başlangıçta ekran dışından başlatmak için */
+}
+
+@keyframes kaydirSabit {
+  0% {
+    transform: translateX(0%); /* Başlangıçta bulunduğu konum */
+  }
+  100% {
+    transform: translateX(-100%); /* Ekran dışına kadar kaydırır */
+  }
+}
+
+.space {
+  display: inline-block; /* Satır içi blok yapar */
+  width: 450px; /* 450px genişliğinde boşluk oluşturur */
+}
