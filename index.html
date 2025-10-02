@@ -1,0 +1,162 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8"> 
+  <title>Web Editörü Sınav</title> <!-- Sayfa başlığı -->
+
+  <!-- Harici CSS dosyasını bağlar -->
+  <link href="style.css" type="text/css" rel="stylesheet"> <!-- Stil dosyası bağlantısı -->
+
+  <!-- Responsive tasarım için ekran boyutunu ayarlar -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Mobil uyumluluk ayarı -->
+</head>
+
+<body>
+
+  <!-- BAŞLIK ALANI: Arka plan videosu, logo ve slogan -->
+  <header>
+    <!-- Arka plan videosu (sessiz, döngülü) -->
+    <video autoplay loop muted playsinline class="background-video"> <!-- Video -->
+      <source src="videos/smoke1.mp4" type="video/mp4"> <!-- Video kaynağı -->
+    </video>
+
+    <!-- Yuvarlak logo resmi -->
+    <img src="images/scout.jpg" alt="Scout Resmi"> <!-- Logoyu gösterir -->
+
+    <!-- Slogan yazısı -->
+    <div class="text-container"> <!-- Slogan kutusu -->
+      <span class="header-text"> <!-- Yazı efekti uygulanan alan -->
+        "Geleceğin yıldızlarını analizlerinle keşfet !" <!-- Slogan metni -->
+      </span>
+    </div>
+  </header>
+
+  <!-- Üst navigasyon menüsü -->
+  <nav>
+    <ul>
+      <li><a href="#" class="active">Ana Sayfa</a></li> <!-- Ana sayfa bağlantısı -->
+      <li><a href="#">Hakkımızda</a></li> <!-- Hakkımızda bağlantısı -->
+      <li><a href="#">Hizmetler</a></li> <!-- Hizmetler bağlantısı -->
+      <li><a href="#">İletişim</a></li> <!-- İletişim bağlantısı -->
+      <li><a href="#">Sıkça Sorulan Sorular (SSS)</a></li> <!-- SSS bağlantısı -->
+    </ul>
+  </nav>
+
+  <!-- ANA BÖLÜM: Kar efekti + açılır kıta menüleri -->
+  <section class="button-menu">
+    <!-- Kar animasyonu katmanları -->
+    <div class="snow1"></div> <!-- 1. kar efekti katmanı -->
+    <div class="snow2"></div> <!-- 2. kar efekti katmanı -->
+    <div class="snow3"></div> <!-- 3. kar efekti katmanı -->
+
+    <!-- Başlık -->
+<h2 style="
+  text-align: center; /* Metni yatayda ortalar */
+  color: white; /* Yazı rengini beyaz yapar */
+  background-color: black; /* Arka plan rengini siyah yapar */
+  margin-top: 60px; /* Üstten 60 piksel boşluk bırakır */
+  padding: 20px 40px; /* Üst-alt 20px, sağ-sol 40px iç boşluk ekler */
+  border: none; /* Kenarlık kullanılmaz */
+  border-radius: 20px; /* Köşeleri yuvarlatır (20 piksel yarıçapla) */
+  display: inline-block; /* Elemanı satır içi blok olarak gösterir */
+  font-family: Arial, sans-serif; /* Yazı tipini Arial yapar, yoksa yedek olarak sans-serif kullanır */
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.1); /* Hafif beyaz tonlu dış gölge efekti verir */
+">
+  HANGİ KITA VE ÜLKEYE GİTMEK İSTERSİNİZ?
+</h2>
+
+
+    <!-- Butonlar ve açılır menüler alanı -->
+    <div class="button-section">
+
+      <!-- ASYA kıtası -->
+      <details class="arrow" id="asya">
+        <summary>Asya</summary> <!-- Kıta başlığı -->
+        <div class="country-list"> <!-- Ülke listesi -->
+          <button>Türkiye</button>
+          <button>Çin</button>
+          <button>Japonya</button>
+        </div>
+      </details>
+
+      <!-- AVRUPA kıtası -->
+      <details class="arrow" id="avrupa">
+        <summary>Avrupa</summary>
+        <div class="country-list">
+          <button>Almanya</button>
+          <button>Fransa</button>
+          <button>İtalya</button>
+        </div>
+      </details>
+
+      <!-- AFRİKA kıtası -->
+      <details class="arrow" id="afrika">
+        <summary>Afrika</summary>
+        <div class="country-list">
+          <button>Nijerya</button>
+          <button>Mısır</button>
+          <button>Güney Afrika</button>
+        </div>
+      </details>
+
+      <!-- KUZEY AMERİKA kıtası -->
+      <details class="arrow" id="kuzey-amerika">
+        <summary>Kuzey Amerika</summary>
+        <div class="country-list">
+          <button>ABD</button>
+          <button>Kanada</button>
+          <button>Meksika</button>
+        </div>
+      </details>
+
+      <!-- GÜNEY AMERİKA kıtası -->
+      <details class="arrow" id="guney-amerika">
+        <summary>Güney Amerika</summary>
+        <div class="country-list">
+          <button>Brezilya</button>
+          <button>Arjantin</button>
+          <button>Şili</button>
+        </div>
+      </details>
+
+      <!-- AVUSTRALYA kıtası -->
+      <details class="arrow" id="avustralya">
+        <summary>Avustralya</summary>
+        <div class="country-list">
+          <button>Avustralya</button>
+          <button>Yeni Zelanda</button>
+        </div>
+      </details>
+
+      <!-- ANTARKTİKA kıtası -->
+      <details class="arrow" id="antarktika">
+        <summary>Antarktika</summary>
+        <div class="country-list">
+          <button>İstasyon 1</button>
+          <button>İstasyon 2</button>
+        </div>
+      </details>
+
+    </div>
+	
+  </section>
+	
+<!-- SABİT KAYAN YAZI -->
+	
+<div class="kayansatir">
+  <div class="kayansatir1">
+   Serbest statüde bulunan Kevin De Bruyne Napoli ile 3 yıllık sözleşme imzaladı. <div class="space"></div> Real Madrid Liverpool'dan Trent Alexander Arnold'u kadrosuna kattığını açıkladı. <div class="space"></div> Galatasaray, Leroy Sané ile 3 yıllık sözleşme imzaladı. <div class="space"></div> Liverpool Florian Wirtz'i 116.5 milyon euro karşılığında kadrosuna kattığını açıkladı. <div class="space"></div> Liverpool Jeremie Frimpong'u renklerine bağladı. <div class="space"></div> Chelsea hücum hattını Liam Delap ile güçlendirdi.
+  </div>
+</div>
+	
+  <!-- Alt bilgi (footer) alanı -->
+  <footer class="sfooter">
+
+	  <div class="footer-content">
+      <p>&copy; 2025 Scout Web | Tüm Hakları Saklıdır.</p> <!-- Telif hakkı metni -->
+      <p>İletişim: info@scoutweb.com</p> <!-- İletişim bilgisi -->
+    </div>
+  </footer>
+
+</body>
+</html>
